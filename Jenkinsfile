@@ -2,19 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+
+        stage('System Info') {
             steps {
-                echo "building"
+                sh 'hostname'
+                sh 'uptime'
+                sh 'df -h'
             }
         }
-        stage('test') {
+
+        stage('List Files') {
             steps {
-                echo "testing"
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo "deploying"
+                sh 'ls -lrt'
             }
         }
     }
