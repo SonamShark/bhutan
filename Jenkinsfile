@@ -2,15 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('hello') {
-            steps {
-                echo "demo of pipeline from poll scm"
-            }
-        }
         stage('build') {
             steps {
-                sh 'ls'
-                sh 'cat file2'
+                echo "building"
+            }
+        }
+        stage('test') {
+            steps {
+                echo "testing"
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo "deploying"
             }
         }
     }
