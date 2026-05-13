@@ -7,5 +7,11 @@ pipeline {
                 echo "demo of pipeline from poll scm"
             }
         }
+        stage('build') {
+            steps {
+                sh 'ls'
+                sh 'cat file2'
+            }
+        }
     }
 }
